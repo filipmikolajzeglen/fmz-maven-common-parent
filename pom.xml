@@ -5,7 +5,7 @@
 
    <groupId>com.filipmikolajzeglen</groupId>
    <artifactId>fmz-maven-common-parent</artifactId>
-   <version>1.0.0</version>
+   <version>1.0.1</version>
    <packaging>pom</packaging>
 
    <name>FMZ - Maven Parent - Common</name>
@@ -19,24 +19,24 @@
    </distributionManagement>
 
    <properties>
-      <testcontainers.version>1.20.6</testcontainers.version>
-      <commons-compress.version>1.27.1</commons-compress.version>
-      <commons-io.version>2.18.0</commons-io.version>
-      <spring-core.version>6.2.3</spring-core.version>
-      <spring-boot.version>3.4.3</spring-boot.version>
-      <java.version>21</java.version>
-      <groovy.version>4.0.26</groovy.version>
-      <spock.version>2.4-M5-groovy-4.0</spock.version>
-      <maven.compiler.source>${java.version}</maven.compiler.source>
-      <maven.compiler.target>${java.version}</maven.compiler.target>
-      <gmaven-plugin.version>4.1.1</gmaven-plugin.version>
-      <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
-      <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
-      <maven-sortpom-plugin.version>4.0.0</maven-sortpom-plugin.version>
-      <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
-      <lombok.version>1.18.36</lombok.version>
-      <postgresql.version>42.7.5</postgresql.version>
-      <flyway-database-postgresql.version>11.3.4</flyway-database-postgresql.version>
+      <version.commons-compress>1.27.1</version.commons-compress>
+      <version.commons-io>2.18.0</version.commons-io>
+      <version.flyway-database-postgresql>11.3.4</version.flyway-database-postgresql>
+      <version.gmaven-plugin>4.1.1</version.gmaven-plugin>
+      <version.groovy>4.0.26</version.groovy>
+      <version.java>21</version.java>
+      <version.lombok>1.18.36</version.lombok>
+      <version.maven-compiler-plugin>3.14.0</version.maven-compiler-plugin>
+      <version.maven-resources-plugin>3.3.1</version.maven-resources-plugin>
+      <version.maven-sortpom-plugin>4.0.0</version.maven-sortpom-plugin>
+      <version.maven-surefire-plugin>3.5.2</version.maven-surefire-plugin>
+      <version.postgresql>42.7.5</version.postgresql>
+      <version.spock>2.4-M5-groovy-4.0</version.spock>
+      <version.spring-boot>3.4.3</version.spring-boot>
+      <version.spring-core>6.2.3</version.spring-core>
+
+      <maven.compiler.source>${version.java}</maven.compiler.source>
+      <maven.compiler.target>${version.java}</maven.compiler.target>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
    </properties>
 
@@ -45,27 +45,27 @@
          <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-            <version>${spring-boot.version}</version>
+            <version>${version.spring-boot}</version>
          </dependency>
          <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <version>${spring-boot.version}</version>
+            <version>${version.spring-boot}</version>
          </dependency>
          <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>${spring-boot.version}</version>
+            <version>${version.spring-boot}</version>
          </dependency>
          <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
-            <version>${spring-boot.version}</version>
+            <version>${version.spring-boot}</version>
          </dependency>
          <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <version>${spring-boot.version}</version>
+            <version>${version.spring-boot}</version>
             <scope>test</scope>
             <exclusions>
                <exclusion>
@@ -77,53 +77,58 @@
          <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-compress</artifactId>
-            <version>${commons-compress.version}</version>
+            <version>${version.commons-compress}</version>
          </dependency>
          <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>${spring-core.version}</version>
+            <version>${version.spring-core}</version>
+         </dependency>
+         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${version.spring-core}</version>
          </dependency>
          <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>${postgresql.version}</version>
+            <version>${version.postgresql}</version>
             <scope>runtime</scope>
          </dependency>
          <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-database-postgresql</artifactId>
-            <version>${flyway-database-postgresql.version}</version>
+            <version>${version.flyway-database-postgresql}</version>
             <scope>runtime</scope>
          </dependency>
          <dependency>
             <groupId>org.apache.groovy</groupId>
             <artifactId>groovy</artifactId>
-            <version>${groovy.version}</version>
+            <version>${version.groovy}</version>
             <scope>test</scope>
          </dependency>
          <dependency>
             <groupId>org.spockframework</groupId>
             <artifactId>spock-core</artifactId>
-            <version>${spock.version}</version>
+            <version>${version.spock}</version>
             <scope>test</scope>
          </dependency>
          <dependency>
             <groupId>org.spockframework</groupId>
             <artifactId>spock-spring</artifactId>
-            <version>${spock.version}</version>
+            <version>${version.spock}</version>
             <scope>test</scope>
          </dependency>
          <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>postgresql</artifactId>
-            <version>${testcontainers.version}</version>
+            <version>${version.testcontainers}</version>
             <scope>test</scope>
          </dependency>
          <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>spock</artifactId>
-            <version>${testcontainers.version}</version>
+            <version>${version.testcontainers}</version>
             <scope>test</scope>
          </dependency>
       </dependencies>
@@ -133,32 +138,32 @@
       <dependency>
          <groupId>commons-io</groupId>
          <artifactId>commons-io</artifactId>
-         <version>${commons-io.version}</version>
+         <version>${version.commons-io}</version>
       </dependency>
       <dependency>
          <groupId>org.apache.maven.plugins</groupId>
          <artifactId>maven-compiler-plugin</artifactId>
-         <version>${maven-compiler-plugin.version}</version>
+         <version>${version.maven-compiler-plugin}</version>
       </dependency>
       <dependency>
          <groupId>org.apache.maven.plugins</groupId>
          <artifactId>maven-resources-plugin</artifactId>
-         <version>${maven-resources-plugin.version}</version>
+         <version>${version.maven-resources-plugin}</version>
       </dependency>
       <dependency>
          <groupId>com.github.ekryd.sortpom</groupId>
          <artifactId>sortpom-maven-plugin</artifactId>
-         <version>${maven-sortpom-plugin.version}</version>
+         <version>${version.maven-sortpom-plugin}</version>
       </dependency>
       <dependency>
          <groupId>org.codehaus.gmavenplus</groupId>
          <artifactId>gmavenplus-plugin</artifactId>
-         <version>${gmaven-plugin.version}</version>
+         <version>${version.gmaven-plugin}</version>
       </dependency>
       <dependency>
          <groupId>org.projectlombok</groupId>
          <artifactId>lombok</artifactId>
-         <version>${lombok.version}</version>
+         <version>${version.lombok}</version>
          <scope>provided</scope>
       </dependency>
    </dependencies>
@@ -168,16 +173,16 @@
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
-            <version>${maven-compiler-plugin.version}</version>
+            <version>${version.maven-compiler-plugin}</version>
             <configuration>
-               <release>${java.version}</release>
+               <release>${version.java}</release>
             </configuration>
          </plugin>
 
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-resources-plugin</artifactId>
-            <version>${maven-resources-plugin.version}</version>
+            <version>${version.maven-resources-plugin}</version>
             <configuration>
                <encoding>UTF-8</encoding>
             </configuration>
@@ -186,7 +191,7 @@
          <plugin>
             <groupId>com.github.ekryd.sortpom</groupId>
             <artifactId>sortpom-maven-plugin</artifactId>
-            <version>${maven-sortpom-plugin.version}</version>
+            <version>${version.maven-sortpom-plugin}</version>
             <executions>
                <execution>
                   <goals>
@@ -199,7 +204,7 @@
          <plugin>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
-            <version>${spring-boot.version}</version>
+            <version>${version.spring-boot}</version>
             <configuration>
                <excludes>
                   <exclude>
@@ -213,7 +218,7 @@
          <plugin>
             <groupId>org.codehaus.gmavenplus</groupId>
             <artifactId>gmavenplus-plugin</artifactId>
-            <version>${gmaven-plugin.version}</version>
+            <version>${version.gmaven-plugin}</version>
             <executions>
                <execution>
                   <goals>
@@ -225,7 +230,7 @@
          </plugin>
          <plugin>
             <artifactId>maven-surefire-plugin</artifactId>
-            <version>${maven-surefire-plugin.version}</version>
+            <version>${version.maven-surefire-plugin}</version>
             <configuration>
                <includes>
                   <include>**/*Test.java</include>
