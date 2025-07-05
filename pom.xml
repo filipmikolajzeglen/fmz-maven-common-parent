@@ -4,7 +4,7 @@
 
   <groupId>com.filipmikolajzeglen</groupId>
   <artifactId>fmz-parent</artifactId>
-  <version>2.0.0</version>
+  <version>2.0.1</version>
   <packaging>pom</packaging>
 
   <name>FMZ - Parent</name>
@@ -64,6 +64,10 @@
     <version.logcaptor>2.10.2</version.logcaptor>
     <version.byte-buddy>1.17.5</version.byte-buddy>
     <version.objenesis>3.4</version.objenesis>
+    <version.fmz-cqrs-core>2.0.1</version.fmz-cqrs-core>
+    <version.fmz-cqrs-persistence>2.0.1</version.fmz-cqrs-persistence>
+    <version.fmz-cqrs-spring>1.0.6</version.fmz-cqrs-spring>
+    <version.fmz-cqrs-micronaut>1.0.4</version.fmz-cqrs-micronaut>
 
     <maven.compiler.source>${version.java}</maven.compiler.source>
     <maven.compiler.target>${version.java}</maven.compiler.target>
@@ -209,6 +213,26 @@
         <artifactId>objenesis</artifactId>
         <version>${version.objenesis}</version>
         <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.filipmikolajzeglen.cqrs</groupId>
+        <artifactId>fmz-cqrs-core</artifactId>
+        <version>${version.fmz-cqrs-core}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.filipmikolajzeglen.cqrs</groupId>
+        <artifactId>fmz-cqrs-persistence</artifactId>
+        <version>${version.fmz-cqrs-persistence}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.filipmikolajzeglen.cqrs</groupId>
+        <artifactId>fmz-cqrs-spring</artifactId>
+        <version>${version.fmz-cqrs-spring}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.filipmikolajzeglen.cqrs</groupId>
+        <artifactId>fmz-cqrs-micronaut</artifactId>
+        <version>${version.fmz-cqrs-micronaut}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
